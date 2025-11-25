@@ -2,737 +2,276 @@
 <html lang="id" data-theme="light">
 <head>
   <meta charset="UTF-8" />
+  <title>DATA P1.DAMAGE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Xhanz - inventoryDamage</title>
   <style>
     :root {
-      --bg: #0b1220;
-      --bg-soft: #111827;
-      --bg-softer: #020617;
-      --bg-elevated: #020617;
-      --border-subtle: #1f2937;
-      --border-strong: #374151;
-      --primary: #38bdf8;
-      --primary-soft: #0b1120;
-      --primary-strong: #0369a1;
-      --primary-soft-alt: rgba(56, 189, 248, 0.1);
-      --primary-soft-alt-2: rgba(56, 189, 248, 0.15);
-      --accent: #a855f7;
-      --accent-soft: rgba(168, 85, 247, 0.18);
-      --accent-soft-alt: rgba(129, 140, 248, 0.2);
-      --accent-strong: #7c3aed;
-      --accent-strong-alt: #4f46e5;
-      --text: #e5e7eb;
-      --text-muted: #9ca3af;
-      --text-soft: #6b7280;
-      --text-invert: #020617;
-      --card-header: #020617;
-      --shadow-subtle: rgba(15, 23, 42, 0.3);
-      --shadow-strong: rgba(0, 0, 0, 0.55);
-      --status-ok: #22c55e;
-      --status-empty: #f97316;
-      --status-critical: #ef4444;
-      --status-chip-bg: rgba(15, 23, 42, 0.85);
-      --status-border: rgba(148, 163, 184, 0.55);
-      --chip-badge: #0ea5e9;
-      --badge-warning: #eab308;
-      --danger: #ef4444;
-      --danger-soft: #3f1818;
-      --border-soft: #1f2937;
-      --input-bg: rgba(15, 23, 42, 0.85);
-      --input-border: #1f2937;
-      --input-focus-border: #38bdf8;
-      --input-placeholder: #6b7280;
-      --scrollbar: #111827;
-      --scrollbar-thumb: #1f2937;
-      --nav-bg: rgba(15, 23, 42, 0.85);
-      --nav-border: rgba(148, 163, 184, 0.35);
-      --pill-bg: rgba(15, 23, 42, 0.9);
-      --pill-border: rgba(148, 163, 184, 0.4);
-      --pill-hover: rgba(30, 64, 175, 0.7);
-    }
-
-    [data-theme="light"] {
-      --bg: #f4f4f5;
-      --bg-soft: #ffffff;
-      --bg-softer: #f9fafb;
-      --bg-elevated: #ffffff;
-      --border-subtle: #e5e7eb;
-      --border-strong: #d1d5db;
-      --primary: #0ea5e9;
-      --primary-soft: #dbeafe;
-      --primary-strong: #0369a1;
-      --primary-soft-alt: #e0f2fe;
-      --primary-soft-alt-2: #dbeafe;
-      --accent: #8b5cf6;
-      --accent-soft: rgba(129, 140, 248, 0.16);
-      --accent-soft-alt: rgba(79, 70, 229, 0.14);
-      --accent-strong: #4f46e5;
-      --accent-strong-alt: #4338ca;
-      --text: #111827;
-      --text-muted: #4b5563;
-      --text-soft: #6b7280;
-      --text-invert: #f9fafb;
-      --card-header: #eff6ff;
-      --shadow-subtle: rgba(15, 23, 42, 0.12);
-      --shadow-strong: rgba(15, 23, 42, 0.18);
-      --status-ok: #16a34a;
-      --status-empty: #ea580c;
-      --status-critical: #dc2626;
-      --status-chip-bg: #eff6ff;
-      --status-border: rgba(148, 163, 184, 0.8);
-      --chip-badge: #0284c7;
-      --badge-warning: #d97706;
+      --bg-page: #eef1f6;
+      --bg-card: #ffffff;
+      --bg-header: #0f172a;
+      --primary: #2563eb;
+      --primary-soft: #e0edff;
       --danger: #dc2626;
       --danger-soft: #fee2e2;
       --border-soft: #e5e7eb;
-      --input-bg: #ffffff;
-      --input-border: #d1d5db;
-      --input-focus-border: #0ea5e9;
-      --input-placeholder: #9ca3af;
-      --scrollbar: #e5e7eb;
-      --scrollbar-thumb: #d1d5db;
-      --nav-bg: #ffffff;
-      --nav-border: rgba(148, 163, 184, 0.5);
-      --pill-bg: #f3f4f6;
-      --pill-border: rgba(148, 163, 184, 0.65);
-      --pill-hover: rgba(59, 130, 246, 0.09);
+      --border-strong: #d1d5db;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --text-soft: #9ca3af;
+      --bg-soft: #f9fafb;
+      --badge: #2563eb;
+      --badge-bg: #eff6ff;
+      --status-ok: #16a34a;
+      --status-empty: #ea580c;
+      --shadow-main: rgba(15, 23, 42, 0.12);
+    }
+
+    [data-theme="dark"] {
+      --bg-page: #020617;
+      --bg-card: #020617;
+      --bg-header: #020617;
+      --primary: #3b82f6;
+      --primary-soft: #111827;
+      --danger: #f97316;
+      --danger-soft: #451a03;
+      --border-soft: #1f2937;
+      --border-strong: #374151;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --text-soft: #6b7280;
+      --bg-soft: #020617;
+      --badge: #60a5fa;
+      --badge-bg: #111827;
+      --status-ok: #22c55e;
+      --status-empty: #f97316;
+      --shadow-main: rgba(15, 23, 42, 0.8);
     }
 
     * {
       box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
     }
 
-    html,
     body {
       margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #0f172a 0, #020617 38%, #020617 100%);
-      color: var(--text);
-      height: 100%;
-      scroll-behavior: smooth;
+      background: radial-gradient(circle at top, #dbeafe 0, var(--bg-page) 45%, var(--bg-page) 100%);
+      color: var(--text-main);
+      transition: background-color .25s, color .25s, background .25s;
+    }
+    [data-theme="dark"] body {
+      background: radial-gradient(circle at top, #020617 0, #020617 100%);
     }
 
-    [data-theme="light"] body {
-      background: radial-gradient(circle at top, #e0f2fe 0, #f4f4f5 40%, #f4f4f5 100%);
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: -40%;
-      background:
-        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.15), transparent 55%),
-        radial-gradient(circle at 100% 0%, rgba(129, 140, 248, 0.15), transparent 55%),
-        radial-gradient(circle at 50% 100%, rgba(15, 23, 42, 0.8), #020617 70%);
-      opacity: 0.95;
-      z-index: -1;
-    }
-
-    [data-theme="light"] body::before {
-      background:
-        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.2), transparent 60%),
-        radial-gradient(circle at 100% 0%, rgba(129, 140, 248, 0.2), transparent 60%),
-        radial-gradient(circle at 50% 150%, rgba(209, 213, 219, 0.9), #f4f4f5 70%);
-    }
-
-    .page-shell {
-      min-height: 100vh;
+    header {
+      background: var(--bg-header);
+      color: #fff;
+      padding: 12px 24px;
       display: flex;
-      align-items: stretch;
-      justify-content: center;
-      padding: 28px 12px;
-    }
-
-    .page-inner {
-      width: 100%;
-      max-width: 1180px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      position: relative;
-    }
-
-    .page-inner::before {
-      content: "";
-      position: absolute;
-      inset: -40px;
-      border-radius: 32px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.88), #020617 70%);
-      box-shadow:
-        0 24px 60px rgba(15, 23, 42, 0.85),
-        0 0 0 1px rgba(15, 23, 42, 0.85);
-      z-index: -2;
-    }
-
-    [data-theme="light"] .page-inner::before {
-      background: linear-gradient(180deg, #f9fafb 0, #e5e7eb 45%, #e5e7eb 100%);
-      border-color: rgba(148, 163, 184, 0.4);
-      box-shadow:
-        0 24px 60px rgba(15, 23, 42, 0.15),
-        0 0 0 1px rgba(148, 163, 184, 0.25);
-    }
-
-    .page-inner::after {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      border-radius: 32px;
-      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.14), transparent 60%);
-      opacity: 0.9;
-      mix-blend-mode: screen;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    [data-theme="light"] .page-inner::after {
-      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 70%);
-      mix-blend-mode: normal;
-      opacity: 1;
-    }
-
-    .page-content {
-      display: grid;
-      grid-template-columns: minmax(0, 3.2fr) minmax(0, 2.1fr);
-      gap: 18px;
-      align-items: flex-start;
-      position: relative;
-      z-index: 1;
-    }
-
-    @media (max-width: 960px) {
-      .page-shell {
-        padding: 18px 10px 24px;
-      }
-      .page-inner {
-        gap: 14px;
-      }
-      .page-inner::before {
-        inset: -16px;
-        border-radius: 24px;
-      }
-      .page-content {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .page-shell {
-        padding: 12px 8px 18px;
-      }
-      .page-inner::before {
-        inset: -10px;
-        border-radius: 20px;
-      }
-      .page-inner::after {
-        inset: -0.5px;
-        border-radius: 20px;
-      }
-    }
-
-    .glass-card {
-      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.98));
-      border-radius: 22px;
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      box-shadow:
-        0 18px 45px rgba(15, 23, 42, 0.85),
-        0 0 0 1px rgba(15, 23, 42, 0.92);
-      padding: 16px 16px 14px;
-    }
-
-    [data-theme="light"] .glass-card {
-      background: linear-gradient(145deg, #f9fafb 0, #ffffff 55%, #eef2ff 100%);
-      border: 1px solid rgba(148, 163, 184, 0.75);
-      box-shadow:
-        0 18px 40px rgba(15, 23, 42, 0.16),
-        0 0 0 1px rgba(148, 163, 184, 0.4);
-    }
-
-    @media (max-width: 640px) {
-      .glass-card {
-        padding: 14px 12px 12px;
-        border-radius: 18px;
-      }
-    }
-
-    .glass-card.secondary {
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.97), rgba(15, 23, 42, 0.97));
-      border-color: rgba(148, 163, 184, 0.5);
-    }
-
-    [data-theme="light"] .glass-card.secondary {
-      background: linear-gradient(145deg, #f9fafb 0, #ffffff 50%, #e5e7eb 100%);
-      border-color: rgba(148, 163, 184, 0.7);
-    }
-
-    .header-row {
-      display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 6px;
-    }
-
-    @media (max-width: 640px) {
-      .header-row {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 8px;
-      }
-    }
-
-    .brand-block {
-      display: flex;
       align-items: center;
-      gap: 10px;
-    }
-
-    .brand-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      background:
-        radial-gradient(circle at 0 0, #e5e7eb 0, #9ca3af 26%, transparent 50%),
-        radial-gradient(circle at 100% 0, #334155 0, #0f172a 42%, transparent 65%),
-        radial-gradient(circle at 50% 100%, #1d4ed8 0, #0f172a 52%, #020617 100%);
-      border: 1px solid rgba(148, 163, 184, 0.85);
-      box-shadow:
-        0 0 0 1px rgba(15, 23, 42, 0.7),
-        0 12px 22px rgba(15, 23, 42, 0.9);
-      position: relative;
-      overflow: hidden;
-    }
-
-    [data-theme="light"] .brand-mark {
-      background:
-        radial-gradient(circle at 0 0, #f9fafb 0, #e5e7eb 26%, transparent 52%),
-        radial-gradient(circle at 100% 0, #cbd5f5 0, #7c3aed 45%, transparent 70%),
-        radial-gradient(circle at 50% 100%, #3b82f6 0, #1d4ed8 48%, #0f172a 100%);
-      border-color: rgba(148, 163, 184, 0.9);
-      box-shadow:
-        0 0 0 1px rgba(148, 163, 184, 0.7),
-        0 10px 20px rgba(15, 23, 42, 0.3);
-    }
-
-    .brand-mark::before {
-      content: "";
-      position: absolute;
-      inset: 4px;
-      border-radius: inherit;
-      border: 1px solid rgba(248, 250, 252, 0.6);
-      box-shadow:
-        inset 0 0 8px rgba(248, 250, 252, 0.35),
-        0 0 10px rgba(56, 189, 248, 0.2);
-      opacity: 0.95;
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-    }
-
-    .badge-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 2px 7px 2px 6px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.88);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      font-size: 11px;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    [data-theme="light"] .badge-label {
-      background: rgba(15, 23, 42, 0.04);
-      border-color: rgba(148, 163, 184, 0.8);
-      color: #4b5563;
-    }
-
-    .badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--chip-badge);
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
-    }
-
-    .brand-title {
-      font-size: 19px;
-      font-weight: 650;
-      letter-spacing: 0.02em;
-      color: var(--text);
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-    }
-
-    .brand-title span.highlight {
-      background: linear-gradient(120deg, #38bdf8, #a855f7, #4f46e5);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 18px rgba(59, 130, 246, 0.5);
-    }
-
-    [data-theme="light"] .brand-title span.highlight {
-      text-shadow: none;
-    }
-
-    .subtitle {
-      font-size: 12px;
-      color: var(--text-soft);
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-    }
-
-    .meta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: flex-end;
-      font-size: 11px;
-      color: var(--text-soft);
-    }
-
-    @media (max-width: 640px) {
-      .meta-row {
-        justify-content: flex-start;
-      }
-    }
-
-    .meta-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: var(--pill-bg);
-      border: 1px solid var(--pill-border);
-      box-shadow:
-        0 0 0 0.5px rgba(15, 23, 42, 0.7),
-        0 8px 16px rgba(15, 23, 42, 0.65);
-    }
-
-    [data-theme="light"] .meta-pill {
-      box-shadow:
-        0 0 0 0.5px rgba(148, 163, 184, 0.6),
-        0 6px 14px rgba(148, 163, 184, 0.55);
-    }
-
-    .meta-pill strong {
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .meta-pill .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.22);
-    }
-
-    .meta-pill .dot.warn {
-      background: var(--badge-warning);
-      box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.22);
-    }
-
-    .meta-pill .chip {
-      padding: 1px 6px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #e5e7eb;
-    }
-
-    [data-theme="light"] .meta-pill .chip {
-      background: rgba(15, 23, 42, 0.92);
-      border-color: rgba(15, 23, 42, 0.75);
-      color: #e5e7eb;
-    }
-
-    .nav-strip {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: var(--nav-bg);
-      border: 1px solid var(--nav-border);
-      box-shadow:
-        0 14px 30px rgba(15, 23, 42, 0.8),
-        0 0 0 0.5px rgba(15, 23, 42, 0.9);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.55);
       position: sticky;
       top: 0;
       z-index: 10;
     }
-
-    [data-theme="light"] .nav-strip {
-      box-shadow:
-        0 10px 24px rgba(148, 163, 184, 0.5),
-        0 0 0 0.5px rgba(148, 163, 184, 0.7);
-    }
-
-    @media (max-width: 640px) {
-      .nav-strip {
-        flex-direction: column;
-        align-items: stretch;
-        border-radius: 16px;
-        padding: 6px 8px;
-        gap: 6px;
-      }
-    }
-
-    .nav-left {
+    header-title {
       display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      color: var(--text-soft);
+      flex-direction: column;
+      gap: 4px;
     }
 
-    .nav-pill {
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .subtitle {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    .chip-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .chip {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 3px 8px 3px 6px;
+      padding: 4px 10px;
       border-radius: 999px;
       background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.65);
-      font-size: 11px;
-    }
-
-    [data-theme="light"] .nav-pill {
-      background: rgba(249, 250, 251, 0.98);
-      border-color: rgba(148, 163, 184, 0.8);
-    }
-
-    .nav-pill span.key {
-      font-size: 10px;
-      padding: 1px 6px;
-      border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.8);
-      background: rgba(15, 23, 42, 0.96);
+      font-size: 11px;
       color: #e5e7eb;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+    }
+    [data-theme="dark"] .chip {
+      background: rgba(15, 23, 42, 0.95);
+    }
+    .chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.4);
+    }
+    .chip-dot.warn {
+      background: #f97316;
+      box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.35);
     }
 
-    [data-theme="light"] .nav-pill span.key {
-      background: #111827;
-      border-color: rgba(15, 23, 42, 0.85);
-    }
-
-    .nav-right {
+    .toolbar {
       display: flex;
       align-items: center;
       gap: 8px;
     }
-
-    @media (max-width: 640px) {
-      .nav-right {
-        justify-content: space-between;
-      }
-    }
-
-    .nav-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 10px 5px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: rgba(15, 23, 42, 0.96);
-      font-size: 11px;
-      color: #e5e7eb;
-      cursor: pointer;
-      box-shadow:
-        0 10px 22px rgba(15, 23, 42, 0.85),
-        0 0 0 0.5px rgba(15, 23, 42, 0.9);
-    }
-
-    [data-theme="light"] .nav-button {
-      background: #111827;
-      border-color: rgba(15, 23, 42, 0.9);
-      color: #f9fafb;
-      box-shadow:
-        0 10px 22px rgba(15, 23, 42, 0.45),
-        0 0 0 0.5px rgba(15, 23, 42, 0.8);
-    }
-
-    .nav-button span.icon {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #38bdf8, #a855f7);
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
-    }
-
-    .nav-button span.label {
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
     .theme-toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: rgba(15, 23, 42, 0.96);
-      font-size: 11px;
-      color: #e5e7eb;
-      cursor: pointer;
-    }
-
-    [data-theme="light"] .theme-toggle {
-      background: rgba(249, 250, 251, 0.96);
-      color: #111827;
-      border-color: rgba(148, 163, 184, 0.9);
-    }
-
-    .theme-toggle span.dot {
-      width: 8px;
-      height: 8px;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.8);
-      background: radial-gradient(circle at 30% 30%, #fbbf24, #eab308);
-      box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.25);
+      background: #020617;
+      color: #e5e7eb;
+      font-size: 11px;
+      padding: 5px 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .theme-toggle .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #facc15, #f97316);
+      box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.4);
+    }
+    [data-theme="dark"] .theme-toggle {
+      background: #f9fafb;
+      color: #020617;
+    }
+    [data-theme="dark"] .theme-toggle .dot {
+      background: linear-gradient(135deg, #38bdf8, #4f46e5);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.35);
     }
 
-    [data-theme="light"] .theme-toggle span.dot {
-      background: radial-gradient(circle at 30% 30%, #0284c7, #0ea5e9);
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+    main {
+      max-width: 1080px;
+      margin: 16px auto 24px;
+      padding: 0 16px;
     }
 
-    .theme-toggle span.label {
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .content-grid {
+    .layout-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.35fr);
-      gap: 14px;
-      margin-top: 4px;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
+      gap: 16px;
+      align-items: flex-start;
     }
-
     @media (max-width: 960px) {
-      .content-grid {
+      .layout-grid {
         grid-template-columns: minmax(0, 1fr);
       }
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      box-shadow:
+        0 14px 32px var(--shadow-main),
+        0 0 0 1px rgba(148, 163, 184, 0.35);
+      padding: 14px 16px 12px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+    }
+    [data-theme="dark"] .card {
+      background: radial-gradient(circle at top left, #020617, #020617 52%);
+      box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.88),
+        0 0 0 1px rgba(15, 23, 42, 0.95);
     }
 
     .card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 6px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
-
     .card-title {
       font-size: 14px;
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--text-soft);
+      color: var(--text-muted);
     }
-
     .card-subtitle {
       font-size: 11px;
-      color: var(--text-muted);
+      color: var(--text-soft);
     }
 
     .badge-mode {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       padding: 3px 8px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.65);
+      border: 1px solid rgba(148, 163, 184, 0.75);
+      background: rgba(255, 255, 255, 0.8);
       font-size: 11px;
+      color: var(--text-muted);
+    }
+    [data-theme="dark"] .badge-mode {
+      background: rgba(15, 23, 42, 0.95);
       color: #e5e7eb;
     }
-
-    [data-theme="light"] .badge-mode {
-      background: rgba(15, 23, 42, 0.96);
-      border-color: rgba(15, 23, 42, 0.85);
-      color: #f9fafb;
-    }
-
-    .badge-mode span.dot {
-      width: 7px;
-      height: 7px;
+    .badge-mode-dot {
+      width: 8px;
+      height: 8px;
       border-radius: 999px;
-      background: var(--chip-badge);
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+      background: #22c55e;
+      box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.4);
     }
 
-    .alert-strip {
+    .alert-tip {
       display: flex;
-      align-items: center;
       gap: 8px;
+      align-items: flex-start;
+      border-radius: 12px;
       padding: 8px 10px;
-      border-radius: 14px;
-      background: radial-gradient(circle at 0 0, rgba(34, 197, 94, 0.12), transparent 60%);
-      border: 1px solid rgba(34, 197, 94, 0.35);
+      background: var(--primary-soft);
+      border: 1px solid rgba(37, 99, 235, 0.35);
       font-size: 11px;
-      color: var(--text-soft);
+      color: var(--text-muted);
       margin-bottom: 10px;
     }
-
-    [data-theme="light"] .alert-strip {
-      background: radial-gradient(circle at 0 0, rgba(34, 197, 94, 0.12), transparent 60%);
-      border-color: rgba(34, 197, 94, 0.6);
+    [data-theme="dark"] .alert-tip {
+      background: rgba(37, 99, 235, 0.12);
+      border-color: rgba(37, 99, 235, 0.5);
     }
-
     .alert-icon {
       width: 18px;
       height: 18px;
       border-radius: 999px;
-      display: inline-flex;
+      border: 1px solid rgba(37, 99, 235, 0.7);
+      display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid rgba(34, 197, 94, 0.7);
-      background: rgba(15, 23, 42, 0.96);
-      color: #bbf7d0;
       font-size: 11px;
-      box-shadow:
-        0 0 0 3px rgba(34, 197, 94, 0.2),
-        0 10px 22px rgba(15, 23, 42, 0.9);
+      color: #1d4ed8;
+      background: #eff6ff;
+    }
+    [data-theme="dark"] .alert-icon {
+      background: #020617;
+      color: #bfdbfe;
     }
 
-    [data-theme="light"] .alert-icon {
-      background: #15803d;
-      border-color: rgba(21, 128, 61, 0.95);
-      color: #dcfce7;
-    }
-
-    .alert-text strong {
-      color: var(--text);
+    form {
+      margin-top: 4px;
     }
 
     .form-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 8px 10px;
-      margin-bottom: 8px;
     }
-
     @media (max-width: 640px) {
       .form-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -742,487 +281,226 @@
     .form-field {
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 4px;
       font-size: 11px;
     }
 
-    .field-label {
+    label {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       color: var(--text-muted);
     }
 
+    .hint {
+      font-size: 10px;
+      color: var(--text-soft);
+    }
     .badge-required {
       font-size: 10px;
-      text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--badge-warning);
+      text-transform: uppercase;
+      color: #f97316;
     }
 
-    .field-input,
-    .field-textarea,
-    .field-select {
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    select {
       width: 100%;
       padding: 7px 9px;
       border-radius: 10px;
-      border: 1px solid var(--input-border);
-      background: var(--input-bg);
-      color: var(--text);
+      border: 1px solid var(--border-soft);
+      background: var(--bg-soft);
+      color: var(--text-main);
       font-size: 12px;
       outline: none;
-      transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+      transition: border-color .16s, box-shadow .16s, background .16s;
     }
 
-    .field-textarea {
-      min-height: 36px;
+    textarea {
+      min-height: 40px;
       resize: vertical;
-      max-height: 90px;
+      max-height: 96px;
     }
 
-    .field-input::placeholder,
-    .field-textarea::placeholder {
-      color: var(--input-placeholder);
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--text-soft);
     }
 
-    .field-input:focus,
-    .field-textarea:focus,
-    .field-select:focus {
-      border-color: var(--input-focus-border);
-      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4);
-      background: rgba(15, 23, 42, 0.98);
-    }
-
-    [data-theme="light"] .field-input:focus,
-    [data-theme="light"] .field-textarea:focus,
-    [data-theme="light"] .field-select:focus {
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.3);
       background: #ffffff;
     }
 
-    .field-input[type="number"] {
+    [data-theme="dark"] input,
+    [data-theme="dark"] textarea,
+    [data-theme="dark"] select {
+      background: #020617;
+      border-color: #1f2937;
+      color: #e5e7eb;
+    }
+    [data-theme="dark"] input:focus,
+    [data-theme="dark"] textarea:focus,
+    [data-theme="dark"] select:focus {
+      background: #020617;
+    }
+
+    input[type="number"] {
       -moz-appearance: textfield;
     }
-
-    .field-input[type="number"]::-webkit-outer-spin-button,
-    .field-input[type="number"]::-webkit-inner-spin-button {
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
-    }
-
-    .field-hint {
-      font-size: 10px;
-      color: var(--text-soft);
-      margin-top: 1px;
     }
 
     .form-footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-top: 10px;
       gap: 8px;
-      margin-top: 6px;
+      flex-wrap: wrap;
     }
 
-    @media (max-width: 640px) {
-      .form-footer {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 6px;
-      }
+    .button-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
-    .btn-primary,
-    .btn-secondary,
-    .btn-danger {
+    button {
       border-radius: 999px;
+      border: none;
       padding: 7px 14px;
       font-size: 12px;
-      border: none;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      justify-content: center;
+      gap: 6px;
       white-space: nowrap;
-      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease,
-        opacity 0.1s ease;
     }
 
     .btn-primary {
-      background: linear-gradient(120deg, #38bdf8, #4f46e5);
-      color: #f9fafb;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
       box-shadow:
-        0 12px 25px rgba(37, 99, 235, 0.7),
+        0 12px 24px rgba(37, 99, 235, 0.55),
         0 0 0 1px rgba(15, 23, 42, 0.9);
     }
-
     .btn-primary:hover {
-      transform: translateY(-0.5px);
       box-shadow:
-        0 14px 30px rgba(37, 99, 235, 0.8),
-        0 0 0 1px rgba(15, 23, 42, 0.95);
+        0 14px 28px rgba(37, 99, 235, 0.7),
+        0 0 0 1px rgba(15, 23, 42, 1);
+      transform: translateY(-0.5px);
     }
-
     .btn-primary:active {
       transform: translateY(0.5px);
       box-shadow:
-        0 8px 18px rgba(37, 99, 235, 0.7),
-        0 0 0 1px rgba(15, 23, 42, 0.95);
+        0 8px 16px rgba(37, 99, 235, 0.7),
+        0 0 0 1px rgba(15, 23, 42, 1);
     }
 
     .btn-secondary {
-      background: rgba(15, 23, 42, 0.95);
+      background: #ffffff;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+    }
+    [data-theme="dark"] .btn-secondary {
+      background: #020617;
       color: #e5e7eb;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      padding-inline: 11px;
-      box-shadow:
-        0 10px 20px rgba(15, 23, 42, 0.9),
-        0 0 0 0.5px rgba(15, 23, 42, 0.95);
-    }
-
-    [data-theme="light"] .btn-secondary {
-      background: #111827;
-      color: #f9fafb;
-      border-color: rgba(15, 23, 42, 0.95);
-      box-shadow:
-        0 10px 18px rgba(15, 23, 42, 0.5),
-        0 0 0 0.5px rgba(15, 23, 42, 0.95);
-    }
-
-    .btn-secondary:hover {
-      transform: translateY(-0.5px);
-      box-shadow:
-        0 12px 24px rgba(15, 23, 42, 0.95),
-        0 0 0 0.5px rgba(15, 23, 42, 0.98);
-    }
-
-    .btn-secondary:active {
-      transform: translateY(0.5px);
-      box-shadow:
-        0 7px 14px rgba(15, 23, 42, 0.9),
-        0 0 0 0.5px rgba(15, 23, 42, 0.98);
+      border-color: #374151;
     }
 
     .btn-danger {
       background: var(--danger-soft);
-      color: #fecaca;
-      border-radius: 999px;
-      border: 1px solid rgba(248, 113, 113, 0.8);
-      padding-inline: 11px;
-      box-shadow:
-        0 10px 20px rgba(15, 23, 42, 0.9),
-        0 0 0 0.5px rgba(15, 23, 42, 0.95);
+      color: #b91c1c;
+      border: 1px solid #fecaca;
+    }
+    [data-theme="dark"] .btn-danger {
+      background: #451a03;
+      color: #fed7aa;
+      border-color: #f97316;
     }
 
-    [data-theme="light"] .btn-danger {
-      background: #fee2e2;
-      color: #991b1b;
-      border-color: rgba(248, 113, 113, 0.95);
-      box-shadow:
-        0 10px 18px rgba(15, 23, 42, 0.45),
-        0 0 0 0.5px rgba(148, 163, 184, 0.85);
-    }
-
-    .btn-danger:hover {
-      transform: translateY(-0.5px);
-      box-shadow:
-        0 12px 24px rgba(15, 23, 42, 0.95),
-        0 0 0 0.5px rgba(15, 23, 42, 0.98);
-    }
-
-    .btn-danger:active {
-      transform: translateY(0.5px);
-      box-shadow:
-        0 7px 14px rgba(15, 23, 42, 0.9),
-        0 0 0 0.5px rgba(15, 23, 42, 0.98);
-    }
-
-    .btn-primary:disabled,
-    .btn-secondary:disabled,
-    .btn-danger:disabled {
+    button:disabled {
       opacity: 0.6;
       cursor: not-allowed;
+      box-shadow: none;
       transform: none;
-      box-shadow:
-        0 6px 12px rgba(15, 23, 42, 0.7),
-        0 0 0 0.5px rgba(15, 23, 42, 0.9);
-    }
-
-    .btn-text {
-      font-size: 11px;
-      color: var(--text-soft);
     }
 
     .saving-indicator {
       font-size: 11px;
       color: var(--primary);
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
     }
-
     .saving-dot {
       width: 8px;
       height: 8px;
       border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.85);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35), 0 0 12px rgba(37, 99, 235, 0.7);
       position: relative;
-      box-shadow:
-        0 0 0 3px rgba(56, 189, 248, 0.18),
-        0 0 10px rgba(56, 189, 248, 0.8);
     }
-
     .saving-dot::after {
       content: "";
       position: absolute;
       inset: 2px;
       border-radius: inherit;
-      background: #38bdf8;
+      background: #60a5fa;
     }
 
-    .table-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 8px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
     }
 
-    .status-group {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      font-size: 11px;
+    thead {
+      background: linear-gradient(90deg, #eef2ff, #e0f2fe);
+      border-bottom: 1px solid var(--border-strong);
+    }
+    [data-theme="dark"] thead {
+      background: #020617;
+      border-bottom-color: #1f2937;
     }
 
-    .status-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: var(--status-chip-bg);
-      border: 1px solid var(--status-border);
+    th,
+    td {
+      padding: 7px 8px;
+      text-align: left;
     }
 
-    [data-theme="light"] .status-chip {
-      background: #f3f4f6;
-      border-color: rgba(148, 163, 184, 0.9);
-    }
-
-    .status-chip strong {
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .status-chip span.dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--status-ok);
-      box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
-    }
-
-    .status-chip span.dot.empty {
-      background: var(--status-empty);
-      box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
-    }
-
-    .status-chip span.dot.critical {
-      background: var(--status-critical);
-      box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.18);
-    }
-
-    .filter-row {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    @media (max-width: 640px) {
-      .table-card-header {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 6px;
-      }
-      .filter-row {
-        width: 100%;
-        justify-content: space-between;
-      }
-    }
-
-    .filter-input {
-      min-width: 160px;
-    }
-
-    @media (max-width: 640px) {
-      .filter-input {
-        flex: 1;
-      }
-    }
-
-    .table-container {
-      border-radius: 14px;
-      border: 1px solid var(--border-soft);
-      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.97), rgba(15, 23, 42, 0.96));
-      box-shadow:
-        inset 0 1px 0 rgba(148, 163, 184, 0.18),
-        0 12px 28px rgba(15, 23, 42, 0.9);
-      overflow: hidden;
-    }
-
-    [data-theme="light"] .table-container {
-      background: #ffffff;
-      border-color: rgba(148, 163, 184, 0.7);
-      box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.8),
-        0 10px 24px rgba(15, 23, 42, 0.25);
-    }
-
-    .table-header-row {
-      display: grid;
-      grid-template-columns: 1.2fr 2.1fr 1.3fr 1.3fr 0.9fr 1fr 1.2fr;
-      padding: 8px 10px;
+    th {
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-soft);
-      border-bottom: 1px solid var(--border-soft);
-      background: linear-gradient(90deg, #020617, #020617);
     }
 
-    [data-theme="light"] .table-header-row {
-      background: linear-gradient(90deg, #f9fafb, #eff6ff);
-      color: #6b7280;
-      border-bottom-color: rgba(209, 213, 219, 0.9);
-    }
-
-    @media (max-width: 880px) {
-      .table-header-row {
-        grid-template-columns: 1.1fr 1.8fr 1.1fr 1.2fr 0.7fr 0.9fr 0.9fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .table-header-row {
-        display: none;
-      }
-    }
-
-    .table-body {
-      max-height: 280px;
-      overflow: auto;
-      scrollbar-width: thin;
-      scrollbar-color: var(--scrollbar-thumb) var(--scrollbar);
-    }
-
-    .table-body::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-
-    .table-body::-webkit-scrollbar-track {
-      background: var(--scrollbar);
-      border-radius: 999px;
-    }
-
-    .table-body::-webkit-scrollbar-thumb {
-      background: var(--scrollbar-thumb);
-      border-radius: 999px;
-    }
-
-    [data-theme="light"] .table-body::-webkit-scrollbar-thumb {
-      background: #cbd5f5;
-    }
-
-    .table-row {
-      display: grid;
-      grid-template-columns: 1.2fr 2.1fr 1.3fr 1.3fr 0.9fr 1fr 1.2fr;
-      padding: 7px 10px;
-      font-size: 12px;
-      border-bottom: 1px solid rgba(15, 23, 42, 0.6);
-      align-items: center;
-      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.96));
-    }
-
-    [data-theme="light"] .table-row {
-      grid-template-columns: 1.1fr 1.8fr 1.1fr 1.2fr 0.7fr 0.9fr 0.9fr;
-      border-bottom-color: rgba(229, 231, 235, 0.9);
-      background: #ffffff;
-    }
-
-    .table-row:nth-child(2n) {
-      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.98));
-    }
-
-    [data-theme="light"] .table-row:nth-child(2n) {
+    tbody tr:nth-child(odd) {
       background: #f9fafb;
     }
-
-    .table-row:last-child {
-      border-bottom: none;
+    tbody tr:nth-child(even) {
+      background: #ffffff;
+    }
+    [data-theme="dark"] tbody tr:nth-child(odd) {
+      background: #020617;
+    }
+    [data-theme="dark"] tbody tr:nth-child(even) {
+      background: #020617;
     }
 
-    @media (max-width: 880px) {
-      .table-row {
-        grid-template-columns: 1.1fr 1.8fr 1.1fr 1.2fr 0.7fr 0.9fr 0.9fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .table-row {
-        grid-template-columns: minmax(0, 1fr);
-        padding: 9px 10px;
-        gap: 6px;
-      }
-    }
-
-    .table-cell {
-      padding-right: 4px;
-    }
-
-    @media (max-width: 640px) {
-      .table-cell {
-        padding: 0;
-      }
-    }
-
-    .cell-main {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .cell-main .name {
-      font-weight: 500;
-    }
-
-    .cell-main .note {
-      font-size: 11px;
-      color: var(--text-soft);
-    }
-
-    @media (max-width: 640px) {
-      .mobile-row-top {
-        display: flex;
-        justify-content: space-between;
-        gap: 8px;
-      }
-
-      .mobile-row-bottom {
-        display: flex;
-        justify-content: space-between;
-        gap: 8px;
-        font-size: 11px;
-        color: var(--text-soft);
-      }
-
-      .mobile-label {
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--text-soft);
-      }
+    tbody tr + tr {
+      border-top: 1px solid var(--border-soft);
     }
 
     .status-dot {
@@ -1231,46 +509,14 @@
       border-radius: 999px;
       display: inline-block;
       margin-right: 4px;
-      box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.9);
     }
-
     .status-ok {
       background: var(--status-ok);
-      box-shadow:
-        0 0 0 2px rgba(15, 23, 42, 0.9),
-        0 0 12px rgba(34, 197, 94, 0.8);
+      box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.45);
     }
-
-    [data-theme="light"] .status-ok {
-      box-shadow:
-        0 0 0 2px rgba(249, 250, 251, 0.9),
-        0 0 8px rgba(34, 197, 94, 0.7);
-    }
-
     .status-empty {
       background: var(--status-empty);
-      box-shadow:
-        0 0 0 2px rgba(15, 23, 42, 0.9),
-        0 0 10px rgba(249, 115, 22, 0.7);
-    }
-
-    [data-theme="light"] .status-empty {
-      box-shadow:
-        0 0 0 2px rgba(249, 250, 251, 0.9),
-        0 0 7px rgba(249, 115, 22, 0.7);
-    }
-
-    .status-critical-dot {
-      background: var(--status-critical);
-      box-shadow:
-        0 0 0 2px rgba(15, 23, 42, 0.9),
-        0 0 11px rgba(239, 68, 68, 0.8);
-    }
-
-    [data-theme="light"] .status-critical-dot {
-      box-shadow:
-        0 0 0 2px rgba(249, 250, 251, 0.9),
-        0 0 8px rgba(239, 68, 68, 0.76);
+      box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.4);
     }
 
     .status-text {
@@ -1278,79 +524,130 @@
       color: var(--text-soft);
     }
 
+    .table-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-input {
+      min-width: 180px;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 11px;
+    }
+    .badge {
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--badge-bg);
+      color: var(--badge);
+      border: 1px solid rgba(37, 99, 235, 0.4);
+    }
+    [data-theme="dark"] .badge {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(148, 163, 184, 0.6);
+      color: #bfdbfe;
+    }
+
+    .table-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+      background: #ffffff;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        0 10px 25px var(--shadow-main);
+    }
+    [data-theme="dark"] .table-wrapper {
+      background: #020617;
+      border-color: #1f2937;
+      box-shadow:
+        inset 0 1px 0 rgba(15, 23, 42, 0.8),
+        0 16px 34px rgba(15, 23, 42, 0.9);
+    }
+
+    .table-body {
+      max-height: 260px;
+      overflow: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #9ca3af #e5e7eb;
+    }
+    .table-body::-webkit-scrollbar {
+      width: 8px;
+    }
+    .table-body::-webkit-scrollbar-track {
+      background: #e5e7eb;
+    }
+    .table-body::-webkit-scrollbar-thumb {
+      background: #9ca3af;
+      border-radius: 999px;
+    }
+    [data-theme="dark"] .table-body::-webkit-scrollbar-track {
+      background: #020617;
+    }
+    [data-theme="dark"] .table-body::-webkit-scrollbar-thumb {
+      background: #4b5563;
+    }
+
     .table-actions {
       display: flex;
-      gap: 6px;
-      align-items: center;
-      justify-content: flex-end;
-    }
-
-    @media (max-width: 640px) {
-      .table-actions {
-        justify-content: flex-start;
-        margin-top: 4px;
-      }
-    }
-
-    .btn-mini {
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: rgba(15, 23, 42, 0.96);
-      color: #e5e7eb;
-      font-size: 11px;
-      padding: 3px 8px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
       gap: 4px;
     }
 
-    [data-theme="light"] .btn-mini {
-      background: #111827;
-      color: #f9fafb;
-      border-color: rgba(15, 23, 42, 0.9);
+    .btn-small {
+      border-radius: 999px;
+      padding: 3px 9px;
+      font-size: 11px;
+      border: 1px solid var(--border-strong);
+      background: #f9fafb;
+      cursor: pointer;
+    }
+    [data-theme="dark"] .btn-small {
+      background: #020617;
+      color: #e5e7eb;
+      border-color: #374151;
     }
 
     .log-container {
-      border-radius: 14px;
+      border-radius: 12px;
       border: 1px solid var(--border-soft);
-      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.98));
-      box-shadow:
-        inset 0 1px 0 rgba(148, 163, 184, 0.18),
-        0 12px 28px rgba(15, 23, 42, 0.9);
+      background: #f9fafb;
       padding: 8px 10px;
-      max-height: 280px;
+      font-size: 12px;
+      max-height: 260px;
       overflow: auto;
       scrollbar-width: thin;
-      scrollbar-color: var(--scrollbar-thumb) var(--scrollbar);
-      font-size: 12px;
+      scrollbar-color: #9ca3af #e5e7eb;
     }
-
-    [data-theme="light"] .log-container {
-      background: #ffffff;
-      border-color: rgba(148, 163, 184, 0.7);
+    [data-theme="dark"] .log-container {
+      background: #020617;
+      border-color: #1f2937;
       box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.7),
-        0 10px 24px rgba(15, 23, 42, 0.25);
+        inset 0 1px 0 rgba(15, 23, 42, 0.8),
+        0 12px 30px rgba(15, 23, 42, 0.9);
     }
-
     .log-container::-webkit-scrollbar {
       width: 8px;
-      height: 8px;
     }
-
     .log-container::-webkit-scrollbar-track {
-      background: var(--scrollbar);
-      border-radius: 999px;
+      background: #e5e7eb;
     }
-
     .log-container::-webkit-scrollbar-thumb {
-      background: var(--scrollbar-thumb);
+      background: #9ca3af;
       border-radius: 999px;
     }
-
-    [data-theme="light"] .log-container::-webkit-scrollbar-thumb {
-      background: #cbd5f5;
+    [data-theme="dark"] .log-container::-webkit-scrollbar-track {
+      background: #020617;
+    }
+    [data-theme="dark"] .log-container::-webkit-scrollbar-thumb {
+      background: #4b5563;
     }
 
     .log-list {
@@ -1363,24 +660,22 @@
     }
 
     .log-item {
+      padding: 5px 6px;
+      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
       display: flex;
       flex-direction: column;
       gap: 2px;
-      padding: 6px 7px;
-      border-radius: 10px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.5);
     }
-
-    [data-theme="light"] .log-item {
-      background: #f9fafb;
-      border-color: rgba(148, 163, 184, 0.85);
+    [data-theme="dark"] .log-item {
+      background: #020617;
+      border-color: #1f2937;
     }
 
     .log-message {
-      color: var(--text);
+      color: var(--text-main);
     }
-
     .log-time {
       font-size: 11px;
       color: var(--text-soft);
@@ -1390,22 +685,22 @@
       font-size: 11px;
       color: var(--text-soft);
       text-align: center;
-      padding: 10px 0;
+      padding: 12px 0;
     }
 
-    .footer-strip {
-      margin-top: 8px;
+    footer {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 8px 16px 16px;
+      font-size: 11px;
+      color: var(--text-soft);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 11px;
-      color: var(--text-soft);
-      padding-top: 6px;
       border-top: 1px dashed rgba(148, 163, 184, 0.6);
     }
-
     @media (max-width: 640px) {
-      .footer-strip {
+      footer {
         flex-direction: column;
         align-items: flex-start;
         gap: 4px;
@@ -1415,595 +710,561 @@
     .footer-brand {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      font-size: 11px;
+      gap: 6px;
     }
-
-    .footer-brand span.logo-dot {
-      width: 7px;
-      height: 7px;
+    .footer-dot {
+      width: 8px;
+      height: 8px;
       border-radius: 999px;
-      background: linear-gradient(135deg, #38bdf8, #a855f7);
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.22);
+      background: linear-gradient(135deg, #60a5fa, #2563eb);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
     }
-
-    .footer-note {
+    .footer-meta {
       font-size: 11px;
       color: var(--text-soft);
-    }
-
-    .cta-link {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    .cta-link:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="page-shell">
-    <div class="page-inner">
-      <div class="header-row">
-        <div class="brand-block">
-          <div class="brand-mark"></div>
-          <div class="brand-text">
-            <div class="badge-label">
-              <span class="badge-dot"></span>
-              <span>Inventory Damage Monitor</span>
-            </div>
-            <div class="brand-title">
-              <span class="highlight">inventoryDamage</span>
-              <span>| Xhanz-</span>
-            </div>
-            <div class="subtitle">PROJECK TIM CC NON HPL</div>
-          </div>
+  <header>
+    <div class="header-title">
+      <h1>inventoryDamage | Xhanz-</h1>
+      <div class="subtitle">PROJECK TIM CC NON HPL</div>
+      <div class="chip-row">
+        <div class="chip">
+          <span class="chip-dot"></span>
+          <span>Realtime Firestore Sync</span>
         </div>
-        <div class="meta-row">
-          <div class="meta-pill">
-            <span class="dot"></span>
-            <span><strong>Realtime</strong> Firestore Sync</span>
-          </div>
-          <div class="meta-pill">
-            <span class="dot warn"></span>
-            <span><strong>Damage</strong> Tracking</span>
-            <span class="chip">PT TACOSHEET</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="nav-strip">
-        <div class="nav-left">
-          <div class="nav-pill">
-            <span class="key">DATA P1</span>
-            <span>ACP • TACO • ADGESIVE • DLL</span>
-          </div>
-        </div>
-        <div class="nav-right">
-          <button class="nav-button" type="button" onclick="renderItems()">
-            <span class="icon"></span>
-            <span class="label">Refresh tampilan</span>
-          </button>
-          <button class="theme-toggle" type="button" onclick="toggleTheme()">
-            <span class="dot"></span>
-            <span class="label" id="themeLabel">Dark mode</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="page-content">
-        <div class="glass-card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Input / Update Damage</div>
-              <div class="card-subtitle">
-                Simpan data damage dengan aman di Firebase Firestore (realtime).
-              </div>
-            </div>
-            <div class="badge-mode">
-              <span class="dot"></span>
-              <span id="modeBadge">Tambah</span>
-            </div>
-          </div>
-
-          <div class="alert-strip">
-            <div class="alert-icon">!</div>
-            <div class="alert-text">
-              <strong>Tips:</strong> setiap perubahan (tambah, edit, hapus) akan otomatis tercatat di Riwayat Aktivitas.
-            </div>
-          </div>
-
-          <form id="itemForm">
-            <input type="hidden" id="itemId" />
-
-            <div class="form-grid">
-              <div class="form-field">
-                <div class="field-label">
-                  <span>Kode Barang</span>
-                  <span class="badge-required">Wajib</span>
-                </div>
-                <input class="field-input" id="code" placeholder="Contoh: P1-ACP-001" required />
-                <div class="field-hint">Gunakan kode konsisten (misal: kategori-lokasi-nomor).</div>
-              </div>
-              <div class="form-field">
-                <div class="field-label">
-                  <span>Jenis Barang</span>
-                  <span class="badge-required">Wajib</span>
-                </div>
-                <input class="field-input" id="nameInput" placeholder="Contoh: ACP Putih 3mm" required />
-              </div>
-              <div class="form-field">
-                <div class="field-label">
-                  <span>Kategori</span>
-                  <span></span>
-                </div>
-                <select class="field-select" id="category">
-                  <option value="">Pilih kategori…</option>
-                  <option value="DAMAGE ACTIVE">Damage Active</option>
-                  <option value="DAMAGE TUKER GULING">Damage Tuker Guling</option>
-                  <option value="DAMAGE ANOMALI">Damage Anomali</option>
-                  <option value="RETUR SUPPLIER">Retur Supplier</option>
-                  <option value="LAINNYA">Lainnya</option>
-                </select>
-                <div class="field-hint">Kategori bisa diubah kapan saja.</div>
-              </div>
-              <div class="form-field">
-                <div class="field-label">
-                  <span>Lokasi / Posisi</span>
-                  <span></span>
-                </div>
-                <input class="field-input" id="location" placeholder="Contoh: Rack P1 / Gudang atas" />
-              </div>
-              <div class="form-field">
-                <div class="field-label">
-                  <span>Jumlah (qty)</span>
-                  <span></span>
-                </div>
-                <input class="field-input" id="qty" type="number" value="0" />
-                <div class="field-hint">Bisa diisi 0 jika hanya ingin catat data tanpa stok.</div>
-              </div>
-              <div class="form-field">
-                <div class="field-label">
-                  <span>Catatan / Detail Damage</span>
-                  <span></span>
-                </div>
-                <textarea class="field-textarea" id="note" placeholder="Contoh: Pinggiran penyok, noda, dll."></textarea>
-              </div>
-            </div>
-
-            <div class="form-footer">
-              <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
-                <button id="saveBtn" class="btn-primary" type="submit">
-                  <span>+ Tambah Barang</span>
-                </button>
-                <button class="btn-secondary" type="button" onclick="resetForm()">Bersihkan Form</button>
-                <button class="btn-danger" type="button" onclick="clearAll()">Hapus Semua Data</button>
-              </div>
-              <div style="display:flex;align-items:center;gap:8px;">
-                <div id="savingIndicator" class="saving-indicator" style="display:none;">
-                  <span class="saving-dot"></span>
-                  <span>Menyimpan ke Firebase…</span>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="glass-card secondary">
-          <div class="table-card-header">
-            <div>
-              <div class="card-title">Daftar Damage</div>
-              <div class="card-subtitle">Data otomatis sync dengan Firestore (realtime listener).</div>
-            </div>
-            <div class="status-group">
-              <div class="status-chip">
-                <span class="dot"></span>
-                <span><strong>Hijau</strong> stok ada</span>
-              </div>
-              <div class="status-chip">
-                <span class="dot empty"></span>
-                <span><strong>Oranye</strong> stok kosong</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="filter-row">
-            <div class="filter-input">
-              <input
-                id="filterCode"
-                class="field-input"
-                placeholder="Filter kode barang…"
-                oninput="renderItems()" />
-            </div>
-            <div class="btn-text">Klik "Edit" untuk mengubah, "Hapus" untuk menghapus.</div>
-          </div>
-
-          <div class="table-container">
-            <div class="table-header-row">
-              <div>Kode</div>
-              <div>Jenis Barang</div>
-              <div>Kategori</div>
-              <div>Lokasi</div>
-              <div>Qty</div>
-              <div>Status</div>
-              <div>Aksi</div>
-            </div>
-            <div class="table-body" id="itemsBody"></div>
-          </div>
-
-          <div style="margin-top:10px;">
-            <div class="card-header">
-              <div>
-                <div class="card-title">Riwayat Aktivitas</div>
-                <div class="card-subtitle">Nama pengedit/penghapus akan tercatat otomatis.</div>
-              </div>
-              <button class="btn-danger" type="button" onclick="resetLogs()">Reset Riwayat</button>
-            </div>
-            <div class="log-container">
-              <ul class="log-list" id="logList"></ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-strip">
-        <div class="footer-brand">
-          <span class="logo-dot"></span>
-          <span>DATA P1.DAMAGE • Xhanz-</span>
-        </div>
-        <div class="footer-note">
-          Database by Firebase • Realtime sync • Bisa diakses tim (selama rules Firestore mengizinkan).
+        <div class="chip">
+          <span class="chip-dot warn"></span>
+          <span>Damage Tracking</span>
         </div>
       </div>
     </div>
-  </div>
+    <div class="toolbar">
+      <button class="theme-toggle" onclick="toggleTheme()">
+        <span class="dot"></span>
+        <span id="themeLabel">Dark mode</span>
+      </button>
+    </div>
+  </header>
 
-  <!-- FIREBASE / LOGIC -->
+  <main>
+    <div class="card" style="margin-bottom: 10px;">
+      <div class="badge-list">
+        <div class="badge">DATA P1</div>
+        <div class="badge">ACP</div>
+        <div class="badge">TACO</div>
+        <div class="badge">ADGESIVE</div>
+        <div class="badge">DLL</div>
+      </div>
+    </div>
+
+    <div class="layout-grid">
+      <section class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Input / Update Damage</div>
+            <div class="card-subtitle">Simpan data damage dengan aman di Firebase Firestore (realtime).</div>
+          </div>
+          <div class="badge-mode">
+            <span class="badge-mode-dot"></span>
+            <span id="modeBadge">Tambah</span>
+          </div>
+        </div>
+
+        <div class="alert-tip">
+          <div class="alert-icon">!</div>
+          <div>
+            <strong>Tips:</strong> setiap perubahan (tambah, edit, hapus) akan otomatis tercatat di Riwayat Aktivitas.
+          </div>
+        </div>
+
+        <form id="itemForm">
+          <input type="hidden" id="itemId" />
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label>
+                <span>Kode Barang</span>
+                <span class="badge-required">Wajib</span>
+              </label>
+              <input id="code" type="text" placeholder="Contoh: P1-ACP-001" required />
+              <div class="hint">Gunakan kode konsisten (misal: kategori-lokasi-nomor).</div>
+            </div>
+
+            <div class="form-field">
+              <label>
+                <span>Jenis Barang</span>
+                <span class="badge-required">Wajib</span>
+              </label>
+              <input id="nameInput" type="text" placeholder="Contoh: ACP Putih 3mm" required />
+            </div>
+
+            <div class="form-field">
+              <label>
+                <span>Kategori</span>
+                <span></span>
+              </label>
+              <select id="category">
+                <option value="">Pilih kategori…</option>
+                <option value="DAMAGE ACTIVE">Damage Active</option>
+                <option value="DAMAGE TUKER GULING">Damage Tuker Guling</option>
+                <option value="DAMAGE ANOMALI">Damage Anomali</option>
+                <option value="RETUR SUPPLIER">Retur Supplier</option>
+                <option value="LAINNYA">Lainnya</option>
+              </select>
+              <div class="hint">Kategori bisa diubah kapan saja.</div>
+            </div>
+
+            <div class="form-field">
+              <label>
+                <span>Lokasi / Posisi</span>
+              </label>
+              <input id="location" type="text" placeholder="Contoh: Rack P1 / Gudang atas" />
+            </div>
+
+            <div class="form-field">
+              <label>
+                <span>Jumlah (qty)</span>
+              </label>
+              <input id="qty" type="number" value="0" />
+              <div class="hint">Bisa diisi 0 jika hanya ingin catat data tanpa stok.</div>
+            </div>
+
+            <div class="form-field">
+              <label>
+                <span>Catatan / Detail Damage</span>
+              </label>
+              <textarea id="note" placeholder="Contoh: Pinggiran penyok, noda, dll."></textarea>
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <div class="button-group">
+              <button type="submit" class="btn-primary" id="saveBtn">
+                <span>+ Tambah Barang</span>
+              </button>
+              <button type="button" class="btn-secondary" onclick="resetForm()">Bersihkan Form</button>
+              <button type="button" class="btn-danger" onclick="clearAll()">Hapus Semua Data</button>
+            </div>
+            <div class="saving-indicator" id="savingIndicator" style="display: none;">
+              <span class="saving-dot"></span>
+              <span>Menyimpan ke Firebase…</span>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Daftar Damage</div>
+            <div class="card-subtitle">Data otomatis sync dengan Firestore (realtime listener).</div>
+          </div>
+          <div class="badge-list">
+            <div class="badge">
+              <span class="status-dot status-ok"></span>
+              <span>Hijau stok ada</span>
+            </div>
+            <div class="badge">
+              <span class="status-dot status-empty"></span>
+              <span>Oranye stok kosong</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-controls">
+          <div class="filter-input">
+            <input
+              id="filterCode"
+              type="text"
+              placeholder="Filter kode barang…"
+              oninput="renderItems()" />
+          </div>
+          <div class="badge-list">
+            <div class="badge">Klik "Edit" untuk mengubah</div>
+            <div class="badge">Klik "Hapus" untuk menghapus</div>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Kode</th>
+                <th>Jenis Barang</th>
+                <th>Kategori</th>
+                <th>Lokasi</th>
+                <th>Qty</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+          </table>
+          <div class="table-body">
+            <table>
+              <tbody id="itemsBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div style="margin-top: 12px;">
+          <div class="card-header" style="margin-bottom: 6px;">
+            <div>
+              <div class="card-title">Riwayat Aktivitas</div>
+              <div class="card-subtitle">Nama pengedit/penghapus akan tercatat otomatis.</div>
+            </div>
+            <button class="btn-danger" type="button" onclick="resetLogs()">Reset Riwayat</button>
+          </div>
+          <div class="log-container">
+            <ul class="log-list" id="logList"></ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-brand">
+      <span class="footer-dot"></span>
+      <span>DATA P1.DAMAGE • Xhanz-</span>
+    </div>
+    <div class="footer-meta">
+      Database by Firebase • Realtime sync • Bisa diakses tim (selama rules Firestore mengizinkan).
+    </div>
+  </footer>
+
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-    import {
-      getFirestore, collection, getDocs, addDoc, updateDoc,
-      deleteDoc, doc, serverTimestamp, orderBy, query,
-      onSnapshot
-    } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+  import {
+    getFirestore, collection, getDocs, addDoc, updateDoc,
+    deleteDoc, doc, serverTimestamp, orderBy, query
+  } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
-    // PROJECT: projeck-ic-non-hpl
-    const firebaseConfig = {
-      apiKey: "AIzaSyCQuOcC5KhMP9ilByeKzNTrlxXQ3IHI3Kk",
-      authDomain: "projeck-ic-non-hpl.firebaseapp.com",
-      projectId: "projeck-ic-non-hpl",
-      storageBucket: "projeck-ic-non-hpl.firebasestorage.app",
-      messagingSenderId: "799016578576",
-      appId: "1:799016578576:web:f6d6383831331ffbde6495",
-      measurementId: "G-VBV7364FNT"
-    };
+  // PROJECT: projeck-ic-non-hpl
+  const firebaseConfig = {
+    apiKey: "AIzaSyCQuOcC5KhMP9ilByeKzNTrlxXQ3IHI3Kk",
+    authDomain: "projeck-ic-non-hpl.firebaseapp.com",
+    projectId: "projeck-ic-non-hpl",
+    storageBucket: "projeck-ic-non-hpl.firebasestorage.app",
+    messagingSenderId: "799016578576",
+    appId: "1:799016578576:web:f6d6383831331ffbde6495",
+    measurementId: "G-VBV7364FNT"
+  };
 
-    const app = initializeApp(firebaseConfig);
-    const db  = getFirestore(app);
+  const app = initializeApp(firebaseConfig);
+  const db  = getFirestore(app);
 
-    const itemsCol = collection(db, "items");
-    const logsCol  = collection(db, "logs");
+  const itemsCol = collection(db, "items");
+  const logsCol  = collection(db, "logs");
 
-    const THEME_KEY = "inventoryTheme_v1";
-    const ADMIN_PIN = "1234";
+  const THEME_KEY = "inventoryTheme_v1";
+  const ADMIN_PIN = "1234";
 
-    let items = [];
-    let logs  = [];
-    let isSaving = false;
+  let items = [];
+  let logs  = [];
+  let isSaving = false;
 
-    const itemForm        = document.getElementById("itemForm");
-    const itemIdInput     = document.getElementById("itemId");
-    const codeInput       = document.getElementById("code");
-    const nameInput       = document.getElementById("nameInput");
-    const categoryInput   = document.getElementById("category");
-    const locationInput   = document.getElementById("location");
-    const qtyInput        = document.getElementById("qty");
-    const noteInput       = document.getElementById("note");
-    const modeBadge       = document.getElementById("modeBadge");
-    const saveBtn         = document.getElementById("saveBtn");
-    const savingIndicator = document.getElementById("savingIndicator");
-    const itemsBody       = document.getElementById("itemsBody");
-    const logList         = document.getElementById("logList");
-    const filterCodeInput = document.getElementById("filterCode");
-    const themeLabel      = document.getElementById("themeLabel");
+  const itemForm        = document.getElementById("itemForm");
+  const itemIdInput     = document.getElementById("itemId");
+  const codeInput       = document.getElementById("code");
+  const nameInput       = document.getElementById("nameInput");
+  const categoryInput   = document.getElementById("category");
+  const locationInput   = document.getElementById("location");
+  const qtyInput        = document.getElementById("qty");
+  const noteInput       = document.getElementById("note");
+  const modeBadge       = document.getElementById("modeBadge");
+  const saveBtn         = document.getElementById("saveBtn");
+  const savingIndicator = document.getElementById("savingIndicator");
+  const itemsBody       = document.getElementById("itemsBody");
+  const logList         = document.getElementById("logList");
+  const filterCodeInput = document.getElementById("filterCode");
+  const themeLabel      = document.getElementById("themeLabel");
 
-    // THEME
-    function applyTheme(theme) {
-      document.documentElement.setAttribute("data-theme", theme);
-      localStorage.setItem(THEME_KEY, theme);
-      themeLabel.textContent = theme === "dark" ? "Light mode" : "Dark mode";
+  function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem(THEME_KEY, theme);
+    themeLabel.textContent = theme === "dark" ? "Light mode" : "Dark mode";
+  }
+
+  window.toggleTheme = function () {
+    const current = document.documentElement.getAttribute("data-theme") || "light";
+    applyTheme(current === "light" ? "dark" : "light");
+  };
+
+  function getStatus(item) {
+    return item.qty > 0 ? "ok" : "empty";
+  }
+
+  function renderItems() {
+    const filter = (filterCodeInput.value || "").trim().toLowerCase();
+    itemsBody.innerHTML = "";
+    items.forEach(item => {
+      if (filter && !item.code.toLowerCase().includes(filter)) return;
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${item.code}</td>
+        <td>
+          <div style="font-weight:500;">${item.name}</div>
+          ${item.note ? `<div style="font-size:11px;color:var(--text-soft);">${item.note}</div>` : ""}
+        </td>
+        <td>${item.category || "-"}</td>
+        <td>${item.location || "-"}</td>
+        <td>${item.qty}</td>
+        <td>
+          <span class="status-dot status-${getStatus(item)}"></span>
+          <span class="status-text">${item.qty > 0 ? "Cukup" : "Kosong"}</span>
+        </td>
+        <td>
+          <div class="table-actions">
+            <button type="button" class="btn-small" onclick="editItem('${item.id}')">Edit</button>
+            <button type="button" class="btn-small btn-danger" onclick="deleteItem('${item.id}')">Hapus</button>
+          </div>
+        </td>
+      `;
+      itemsBody.appendChild(tr);
+    });
+  }
+  window.renderItems = renderItems;
+
+  function renderLogs() {
+    logList.innerHTML = "";
+    if (!logs.length) {
+      const li = document.createElement("li");
+      li.className = "log-empty";
+      li.textContent = "Belum ada aktivitas.";
+      logList.appendChild(li);
+      return;
     }
-    window.toggleTheme = function () {
-      const current = document.documentElement.getAttribute("data-theme") || "light";
-      applyTheme(current === "light" ? "dark" : "light");
-    };
+    logs.forEach(l => {
+      const li = document.createElement("li");
+      li.className = "log-item";
+      const time = l.time?.toDate ? l.time.toDate() : new Date();
+      li.innerHTML = `
+        <div class="log-message">${l.message}</div>
+        <div class="log-time">${time.toLocaleString("id-ID")}</div>
+      `;
+      logList.appendChild(li);
+    });
+  }
 
-    // REALTIME LISTENER ITEMS
-    function listenItemsRealtime() {
-      const q = query(itemsCol, orderBy("createdAt", "desc"));
-      onSnapshot(
-        q,
-        (snap) => {
-          items = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-          window.renderItems();
-        },
-        (err) => {
-          console.error("Gagal mengambil data items:", err);
-          alert("Gagal mengambil data barang dari Firebase. Silakan cek console (F12 -> Console).");
-        }
-      );
+  async function loadItems() {
+    const q = query(itemsCol, orderBy("createdAt", "desc"));
+    const snap = await getDocs(q);
+    items = snap.docs.map(d => ({
+      id: d.id,
+      ...d.data()
+    }));
+  }
+
+  async function loadLogs() {
+    const q = query(logsCol, orderBy("time", "desc"));
+    const snap = await getDocs(q);
+    logs = snap.docs.map(d => ({
+      id: d.id,
+      ...d.data()
+    }));
+  }
+
+  async function refreshAll() {
+    try {
+      await Promise.all([loadItems(), loadLogs()]);
+      renderItems();
+      renderLogs();
+    } catch (err) {
+      console.error("Gagal memuat data:", err);
+      alert("Gagal memuat data dari Firebase. Cek koneksi & rules Firestore.");
     }
+  }
 
-    // REALTIME LISTENER LOGS
-    function listenLogsRealtime() {
-      const q = query(logsCol, orderBy("time", "desc"));
-      onSnapshot(
-        q,
-        (snap) => {
-          logs = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-          renderLogs();
-        },
-        (err) => {
-          console.error("Gagal mengambil riwayat aktivitas:", err);
-          alert("Gagal mengambil riwayat aktivitas dari Firebase. Silakan cek console (F12 -> Console).");
-        }
-      );
-    }
-
-    // LOGGING
-    async function addLog(message) {
-      try {
-        await addDoc(logsCol, {
-          message,
-          time: serverTimestamp()
-        });
-      } catch (err) {
-        console.error("Gagal simpan log:", err);
-      }
-    }
-
-    // STATUS
-    function getStatus(item) {
-      return item.qty > 0 ? "ok" : "empty";
-    }
-
-    // RENDER ITEMS
-    window.renderItems = function () {
-      const filter = (filterCodeInput.value || "").trim().toLowerCase();
-      itemsBody.innerHTML = "";
-      items.forEach(item => {
-        if (filter && !item.code.toLowerCase().includes(filter)) return;
-
-        const tr = document.createElement("div");
-        tr.className = "table-row";
-
-        tr.innerHTML = `
-          <div class="table-cell">
-            <span>${item.code}</span>
-          </div>
-          <div class="table-cell">
-            <div class="cell-main">
-              <span class="name">${item.name}</span>
-              ${item.note ? `<span class="note">${item.note}</span>` : ""}
-            </div>
-          </div>
-          <div class="table-cell">
-            <span>${item.category || "-"}</span>
-          </div>
-          <div class="table-cell">
-            <span>${item.location || "-"}</span>
-          </div>
-          <div class="table-cell">
-            <span>${item.qty}</span>
-          </div>
-          <div class="table-cell">
-            <span class="status-dot status-${getStatus(item)}"></span>
-            <span class="status-text">${item.qty>0?"Cukup":"Kosong"}</span>
-          </div>
-          <div class="table-cell">
-            <div class="table-actions">
-              <button class="btn-secondary" type="button" onclick="editItem('${item.id}')">Edit</button>
-              <button class="btn-danger" type="button" onclick="deleteItem('${item.id}')">Hapus</button>
-            </div>
-          </div>
-        `;
-
-        itemsBody.appendChild(tr);
+  async function addLog(message) {
+    try {
+      await addDoc(logsCol, {
+        message,
+        time: serverTimestamp()
       });
+    } catch (err) {
+      console.error("Gagal simpan log:", err);
+    }
+  }
+
+  function startSaving() {
+    isSaving = true;
+    saveBtn.disabled = true;
+    saveBtn.textContent = "Menyimpan…";
+    savingIndicator.style.display = "flex";
+  }
+
+  function stopSaving(originalText) {
+    isSaving = false;
+    saveBtn.disabled = false;
+    if (originalText) saveBtn.textContent = originalText;
+    savingIndicator.style.display = "none";
+  }
+
+  window.resetForm = function () {
+    itemForm.reset();
+    itemIdInput.value = "";
+    qtyInput.value = 0;
+    modeBadge.textContent = "Tambah";
+    saveBtn.textContent = "+ Tambah Barang";
+  };
+
+  window.editItem = function (id) {
+    const item = items.find(i => i.id === id);
+    if (!item) return;
+    itemIdInput.value = item.id;
+    codeInput.value = item.code;
+    nameInput.value = item.name;
+    categoryInput.value = item.category || "";
+    locationInput.value = item.location || "";
+    qtyInput.value = item.qty;
+    noteInput.value = item.note || "";
+    modeBadge.textContent = "Edit";
+    saveBtn.textContent = "Simpan Perubahan";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  itemForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (isSaving) return;
+
+    const data = {
+      code: codeInput.value.trim(),
+      name: nameInput.value.trim(),
+      category: categoryInput.value.trim(),
+      location: locationInput.value.trim(),
+      qty: Number(qtyInput.value || 0),
+      note: noteInput.value.trim()
     };
 
-    // RENDER LOGS
-    function renderLogs() {
-      logList.innerHTML = "";
-      if (!logs.length) {
-        const li = document.createElement("li");
-        li.className = "log-empty";
-        li.textContent = "Belum ada aktivitas.";
-        logList.appendChild(li);
-        return;
-      }
-      logs.forEach(l => {
-        const li = document.createElement("li");
-        li.className = "log-item";
-        const time = l.time?.toDate ? l.time.toDate() : new Date();
-        li.innerHTML = `
-          <div class="log-message">${l.message}</div>
-          <div class="log-time">${time.toLocaleString("id-ID")}</div>
-        `;
-        logList.appendChild(li);
-      });
+    if (!data.code || !data.name) {
+      alert("Kode dan Jenis Barang wajib diisi.");
+      return;
     }
 
-    // FORM HELPER
-    window.resetForm = function () {
-      itemForm.reset();
-      itemIdInput.value = "";
-      qtyInput.value = 0;
-      modeBadge.textContent = "Tambah";
-      saveBtn.textContent = "+ Tambah Barang";
-    };
+    const id = itemIdInput.value || null;
+    const originalText = saveBtn.textContent;
 
-    window.editItem = function (id) {
-      const item = items.find(i => i.id === id);
-      if (!item) return;
-      itemIdInput.value = item.id;
-      codeInput.value = item.code;
-      nameInput.value = item.name;
-      categoryInput.value = item.category || "";
-      locationInput.value = item.location || "";
-      qtyInput.value = item.qty;
-      noteInput.value = item.note || "";
-      modeBadge.textContent = "Edit";
-      saveBtn.textContent = "Simpan Perubahan";
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
+    startSaving();
 
-    function startSaving() {
-      isSaving = true;
-      saveBtn.disabled = true;
-      saveBtn.textContent = "Menyimpan...";
-      savingIndicator.style.display = "inline";
-    }
+    try {
+      if (id) {
+        const editor = prompt("Nama pengedit:");
+        if (!editor || !editor.trim()) {
+          alert("Nama pengedit wajib diisi.");
+          stopSaving(originalText);
+          return;
+        }
 
-    function stopSaving(originalText) {
-      isSaving = false;
-      saveBtn.disabled = false;
-      if (originalText) saveBtn.textContent = originalText;
-      savingIndicator.style.display = "none";
-    }
-
-    // SUBMIT FORM
-    itemForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      if (isSaving) return;
-
-      const data = {
-        code: codeInput.value.trim(),
-        name: nameInput.value.trim(),
-        category: categoryInput.value.trim(),
-        location: locationInput.value.trim(),
-        qty: Number(qtyInput.value || 0),
-        note: noteInput.value.trim()
-      };
-
-      if (!data.code || !data.name) {
-        alert("Kode dan Jenis Barang wajib diisi.");
-        return;
-      }
-
-      const id = itemIdInput.value || null;
-      const originalText = saveBtn.textContent;
-
-      startSaving();
-
-      try {
-        if (id) {
-          const editor = prompt("Nama pengedit:");
-          if (!editor || !editor.trim()) {
-            alert("Nama pengedit wajib diisi.");
-            stopSaving(originalText);
-            return;
-          }
-          const old = items.find(i => i.id === id);
-          const oldQty = old ? Number(old.qty || 0) : 0;
-          const diff   = data.qty - oldQty;
-          let perubahan = diff>0 ? `bertambah ${diff}` :
-                          diff<0 ? `berkurang ${Math.abs(diff)}` :
+        const old = items.find(i => i.id === id);
+        const oldQty = old ? Number(old.qty || 0) : 0;
+        const diff   = data.qty - oldQty;
+        let perubahan = diff > 0 ? `bertambah ${diff}` :
+                        diff < 0 ? `berkurang ${Math.abs(diff)}` :
                                    "tidak berubah";
 
-          const ref = doc(db, "items", id);
-          await updateDoc(ref, { ...data, updatedAt: serverTimestamp() });
-          await addLog(`${editor.trim()} mengedit "${data.name}" (kode: ${data.code}), jumlah dari ${oldQty} menjadi ${data.qty} (${perubahan})`);
-        } else {
-          await addDoc(itemsCol, { ...data, createdAt: serverTimestamp(), updatedAt: serverTimestamp() });
-          await addLog(`Menambah "${data.name}" (kode: ${data.code}) dengan jumlah ${data.qty}`);
-        }
-
-        resetForm();
-      } catch (err) {
-        console.error(err);
-        alert("Gagal menyimpan data.");
-      } finally {
-        stopSaving(originalText);
-      }
-    });
-
-    // DELETE 1 ITEM
-    window.deleteItem = async function (id) {
-      const item = items.find(i => i.id === id);
-      if (!item) return;
-      const deleter = prompt("Nama penghapus:");
-      if (!deleter || !deleter.trim()) {
-        alert("Nama penghapus wajib diisi.");
-        return;
-      }
-      if (!confirm(`Hapus "${item.name}" (kode: ${item.code})?`)) return;
-
-      try {
         const ref = doc(db, "items", id);
-        await deleteDoc(ref);
-        await addLog(`${deleter.trim()} menghapus "${item.name}" (kode: ${item.code}) sebanyak ${item.qty}`);
-      } catch (err) {
-        console.error(err);
-        alert("Gagal menghapus data.");
+        await updateDoc(ref, {
+          ...data,
+          updatedAt: serverTimestamp()
+        });
+        await addLog(`${editor.trim()} mengedit "${data.name}" (kode: ${data.code}), jumlah dari ${oldQty} menjadi ${data.qty} (${perubahan}).`);
+      } else {
+        await addDoc(itemsCol, {
+          ...data,
+          createdAt: serverTimestamp(),
+          updatedAt: serverTimestamp()
+        });
+        await addLog(`Menambah "${data.name}" (kode: ${data.code}) dengan jumlah ${data.qty}.`);
       }
-    };
 
-    // HAPUS SEMUA ITEM
-    window.clearAll = async function () {
-      if (!items.length) return;
-      const deleter = prompt("Nama penghapus semua data:");
-      if (!deleter || !deleter.trim()) {
-        alert("Nama penghapus wajib diisi.");
-        return;
+      await refreshAll();
+      resetForm();
+    } catch (err) {
+      console.error("Gagal menyimpan:", err);
+      alert("Gagal menyimpan data. Cek koneksi & rules Firestore.");
+    } finally {
+      stopSaving(originalText);
+    }
+  });
+
+  window.deleteItem = async function (id) {
+    const item = items.find(i => i.id === id);
+    if (!item) return;
+
+    const deleter = prompt("Nama penghapus:");
+    if (!deleter || !deleter.trim()) {
+      alert("Nama penghapus wajib diisi.");
+      return;
+    }
+
+    if (!confirm(`Hapus "${item.name}" (kode: ${item.code})?`)) return;
+
+    try {
+      const ref = doc(db, "items", id);
+      await deleteDoc(ref);
+      await addLog(`${deleter.trim()} menghapus "${item.name}" (kode: ${item.code}) sebanyak ${item.qty}.`);
+      await refreshAll();
+    } catch (err) {
+      console.error("Gagal hapus item:", err);
+      alert("Gagal menghapus data.");
+    }
+  };
+
+  window.clearAll = async function () {
+    if (!items.length) return;
+    const deleter = prompt("Nama penghapus semua data:");
+    if (!deleter || !deleter.trim()) {
+      alert("Nama penghapus wajib diisi.");
+      return;
+    }
+    if (!confirm("Yakin hapus SEMUA data barang?")) return;
+
+    try {
+      const snap = await getDocs(itemsCol);
+      let totalItem = 0;
+      let totalQty  = 0;
+      for (const d of snap.docs) {
+        totalItem++;
+        totalQty += Number(d.data().qty || 0);
+        await deleteDoc(d.ref);
       }
-      if (!confirm("Yakin hapus SEMUA data barang?")) return;
+      await addLog(`${deleter.trim()} menghapus SEMUA data (${totalItem} item, total ${totalQty} barang).`);
+      await refreshAll();
+    } catch (err) {
+      console.error("Gagal hapus semua:", err);
+      alert("Gagal menghapus semua data.");
+    }
+  };
 
-      try {
-        const snap = await getDocs(itemsCol);
-        let totalItem = 0, totalQty = 0;
-        for (const d of snap.docs) {
-          totalItem++;
-          totalQty += Number(d.data().qty || 0);
-          await deleteDoc(d.ref);
-        }
-        await addLog(`${deleter.trim()} menghapus SEMUA data (${totalItem} item, total ${totalQty} barang)`);
-      } catch (err) {
-        console.error(err);
-        alert("Gagal hapus semua data.");
+  window.resetLogs = async function () {
+    const pin = prompt("Masukkan PIN admin untuk reset riwayat:");
+    if (pin !== ADMIN_PIN) {
+      alert("PIN salah.");
+      return;
+    }
+    if (!confirm("Yakin reset semua riwayat aktivitas?")) return;
+
+    try {
+      const snap = await getDocs(logsCol);
+      for (const d of snap.docs) {
+        await deleteDoc(d.ref);
       }
-    };
+      await refreshAll();
+    } catch (err) {
+      console.error("Gagal reset logs:", err);
+      alert("Gagal reset riwayat.");
+    }
+  };
 
-    // RESET LOGS
-    window.resetLogs = async function () {
-      const pin = prompt("Masukkan PIN admin untuk reset riwayat:");
-      if (pin !== ADMIN_PIN) {
-        alert("PIN salah.");
-        return;
-      }
-      if (!confirm("Yakin reset semua riwayat aktivitas?")) return;
-      try {
-        const snap = await getDocs(logsCol);
-        for (const d of snap.docs) {
-          await deleteDoc(d.ref);
-        }
-      } catch (err) {
-        console.error(err);
-        alert("Gagal reset riwayat.");
-      }
-    };
+  (async function init() {
+    const savedTheme = localStorage.getItem(THEME_KEY) || "light";
+    applyTheme(savedTheme);
+    await refreshAll();
+  })();
+</script>
 
-    // Dummy (tidak dipakai lagi)
-    async function refreshAll() {}
-
-    // INIT
-    (function init() {
-      const savedTheme = localStorage.getItem(THEME_KEY) || "light";
-      applyTheme(savedTheme);
-      listenItemsRealtime();
-      listenLogsRealtime();
-    })();
-  </script>
 </body>
 </html>

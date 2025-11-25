@@ -98,7 +98,6 @@
       });
     } catch (err) {
       console.error("Gagal simpan log:", err);
-      // kalau log gagal, jangan ganggu proses utama
     }
   }
 
@@ -181,7 +180,7 @@
   function startSaving() {
     isSaving = true;
     saveBtn.disabled = true;
-    saveBtn.textContent = "Menyimpan.";
+    saveBtn.textContent = "Menyimpan...";
     savingIndicator.style.display = "inline";
   }
 
@@ -239,7 +238,6 @@
         await addLog(`Menambah "${data.name}" (kode: ${data.code}) dengan jumlah ${data.qty}`);
       }
 
-      // tidak perlu refreshAll, karena realtime listener sudah update otomatis
       resetForm();
     } catch (err) {
       console.error(err);
@@ -264,7 +262,6 @@
       const ref = doc(db, "items", id);
       await deleteDoc(ref);
       await addLog(`${deleter.trim()} menghapus "${item.name}" (kode: ${item.code}) sebanyak ${item.qty}`);
-      // realtime listener akan update tabel otomatis
     } catch (err) {
       console.error(err);
       alert("Gagal menghapus data.");
@@ -290,7 +287,6 @@
         await deleteDoc(d.ref);
       }
       await addLog(`${deleter.trim()} menghapus SEMUA data (${totalItem} item, total ${totalQty} barang)`);
-      // realtime listener akan update kosong otomatis
     } catch (err) {
       console.error(err);
       alert("Gagal hapus semua data.");
@@ -310,17 +306,14 @@
       for (const d of snap.docs) {
         await deleteDoc(d.ref);
       }
-      // realtime listener akan bikin list kosong otomatis
     } catch (err) {
       console.error(err);
       alert("Gagal reset riwayat.");
     }
   };
 
-  // DUMMY, biar kalau masih ada 'await refreshAll()' nggak error
-  async function refreshAll() {
-    // tidak dipakai lagi karena pakai realtime
-  }
+  // Dummy, tidak dipakai lagi (biar nggak error kalau ada yang masih manggil)
+  async function refreshAll() {}
 
   // INIT
   (function init() {
